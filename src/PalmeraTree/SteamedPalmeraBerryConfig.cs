@@ -7,9 +7,6 @@ namespace PalmeraTree
 	public class SteamedPalmeraBerryConfig : IEntityConfig
 	{
 		public const string Id = "SteamedPalmeraBerry";
-		public const string Name = "Steamed Palmera Berry";
-		public static string Description = $"The steamed bud of a {UI.FormatAsLink(PalmeraBerryConfig.Name, PalmeraBerryConfig.Id)}.\n\nLong exposure to heat and exquisite cooking skills turn the toxic berry into a delicious dessert.";
-		public static string RecipeDescription = $"Delicious steamed {UI.FormatAsLink(PalmeraBerryConfig.Name, PalmeraBerryConfig.Id)}.";
 
 		public ComplexRecipe Recipe;
 
@@ -17,9 +14,9 @@ namespace PalmeraTree
 		{
 			var entity = EntityTemplates.CreateLooseEntity(
 				id: Id,
-				name: UI.FormatAsLink(Name, Id),
-				desc: Description,
-				mass: 1f,
+				name: STRINGS.FOOD.STEAMEDPALMERABERRY.NAME,
+				desc: STRINGS.FOOD.STEAMEDPALMERABERRY.DESC,
+                mass: 1f,
 				unitMass: false,
 				anim: Assets.GetAnim("kukumelon_kanim"),
 				initialAnim: "object",
@@ -46,7 +43,7 @@ namespace PalmeraTree
 				output: new[] {new ComplexRecipe.RecipeElement(SteamedPalmeraBerryConfig.Id, 1f)},
 				fabricatorId: GourmetCookingStationConfig.ID,
 				productionTime: 100f,
-				recipeDescription: RecipeDescription,
+				recipeDescription: STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC,
 				nameDisplayType: ComplexRecipe.RecipeNameDisplay.Result,
 				sortOrder: 120
 			);

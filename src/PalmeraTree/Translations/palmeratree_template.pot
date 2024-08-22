@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. PalmeraTree.STRINGS.CROPS.PALMERABERRY.DESC
+msgctxt "PalmeraTree.STRINGS.CROPS.PALMERABERRY.DESC"
+msgid "A toxic, non-edible bud that emits <link=\"HYDROGEN\">hydrogen</link>."
+msgstr ""
+
+#. PalmeraTree.STRINGS.CROPS.PALMERABERRY.NAME
+msgctxt "PalmeraTree.STRINGS.CROPS.PALMERABERRY.NAME"
+msgid "<link=\"PALMERABERRY\">Palmera Berry</link>"
+msgstr ""
+
+#. PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.DESC
+msgctxt "PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.DESC"
+msgid "The steamed bud of a <link=\"PALMERABERRY\">Palmera Berry</link>.\n\nLong exposure to heat and exquisite cooking skills turn the toxic berry into a delicious dessert."
+msgstr ""
+
+#. PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.NAME
+msgctxt "PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.NAME"
+msgid "<link=\"STEAMEDPALMERABERRY\">Steamed Palmera Berry</link>"
+msgstr ""
+
+#. PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC
+msgctxt "PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC"
+msgid "Delicious steamed <link=\"PALMERABERRY\">Palmera Berry</link>."
+msgstr ""
+
+#. PalmeraTree.STRINGS.PLANTS.PALMERATREE.DESC
+msgctxt "PalmeraTree.STRINGS.PLANTS.PALMERATREE.DESC"
+msgid "A large, <link=\"CHLORINEGAS\">chlorine</link>-dwelling <link=\"PLANTS\">Plant</link> that can be grown in farm buildings.\n\nPalmeras grow inedible buds that emit toxic <link=\"HYDROGEN\">hydrogen</link> gas."
+msgstr ""
+
+#. PalmeraTree.STRINGS.PLANTS.PALMERATREE.DOMESTICATEDDESC
+msgctxt "PalmeraTree.STRINGS.PLANTS.PALMERATREE.DOMESTICATEDDESC"
+msgid "A large, chlorine-dwelling <link=\"PLANTS\">Plant</link> that grows inedible buds which emit toxic hydrogen gas."
+msgstr ""
+
+#. PalmeraTree.STRINGS.PLANTS.PALMERATREE.NAME
+msgctxt "PalmeraTree.STRINGS.PLANTS.PALMERATREE.NAME"
+msgid "<link=\"PALMERATREEPLANT\">Palmera Tree</link>"
+msgstr ""
+
+#. PalmeraTree.STRINGS.SEEDS.PALMERATREE.DESC
+msgctxt "PalmeraTree.STRINGS.SEEDS.PALMERATREE.DESC"
+msgid "The <link=\"PLANTS\">Seed</link> of a <link=\"PALMERATREEPLANT\">Palmera Tree</link>."
+msgstr ""
+
+#. PalmeraTree.STRINGS.SEEDS.PALMERATREE.NAME
+msgctxt "PalmeraTree.STRINGS.SEEDS.PALMERATREE.NAME"
+msgid "<link=\"PALMERATREEPLANT\">Palmera Tree Seed</link>"
+msgstr ""
+
+#. PalmeraTree.STRINGS.SEEDS.PALMERATREE.RECIPEDESC
+msgctxt "PalmeraTree.STRINGS.SEEDS.PALMERATREE.RECIPEDESC"
+msgid "What will happen if you mash some organic mass together?"
+msgstr ""
+
+#. PalmeraTree.STRINGS.TRANSLATION.AUTHOR.NAME
+msgctxt "PalmeraTree.STRINGS.TRANSLATION.AUTHOR.NAME"
+msgid "Cairath"
+msgstr ""
+
