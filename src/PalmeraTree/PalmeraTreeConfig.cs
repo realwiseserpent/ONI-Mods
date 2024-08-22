@@ -64,7 +64,6 @@ namespace PalmeraTree
                 desc: SeedDescription,
                 productionType: SeedProducer.ProductionType.Harvest,
                 anim: Assets.GetAnim(AnimNameSeed),
-                numberOfSeeds: 0,
                 additionalTags: new List<Tag> { GameTags.CropSeed },
                 sortOrder: 7,
                 domesticatedDescription: CREATURES.SPECIES.JUNGLEGASPLANT.DOMESTICATEDDESC,
@@ -94,7 +93,7 @@ namespace PalmeraTree
 
         public string[] GetDlcIds()
         {
-	        return DlcManager.AVAILABLE_ALL_VERSIONS;
+            return DlcManager.AVAILABLE_ALL_VERSIONS;
         }
     }
 }
