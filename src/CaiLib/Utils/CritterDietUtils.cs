@@ -49,7 +49,7 @@ namespace CaiLib.Utils
 
 			var def = prefab.AddOrGetDef<CreatureCalorieMonitor.Def>();
 			def.diet = diet;
-			def.minPoopSizeInCalories = referenceCaloriesPerKg * minPoopSizeInKg;
+			def.minConsumedCaloriesBeforePooping = referenceCaloriesPerKg * minPoopSizeInKg;
 
 			prefab.AddOrGetDef<SolidConsumerMonitor.Def>().diet = diet;
 

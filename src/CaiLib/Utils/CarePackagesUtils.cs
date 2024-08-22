@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using HarmonyLib;
+using System.Collections.Generic;
 
 namespace CaiLib.Utils
 {
@@ -14,11 +15,11 @@ namespace CaiLib.Utils
 		public static void AddCarePackage(ref Immigration immigration, string objectId, float amount, Func<bool> requirement = null)
 		{
 			var field = Traverse.Create(immigration).Field("carePackages");
-			var list = field.GetValue<CarePackageInfo[]>().ToList();
+			var list = field.GetValue<List<CarePackageInfo>>();
 
 			list.Add(new CarePackageInfo(objectId, amount, requirement));
 
-			field.SetValue(list.ToArray());
+			field.SetValue(list);
 		}
 
 		public static bool CycleCondition(int cycle)
