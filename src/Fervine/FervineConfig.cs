@@ -40,7 +40,7 @@ namespace Fervine
 				temperature_lethal_low: 258.15f,
 				temperature_warning_low: 288.15f,
 				temperature_warning_high: 363.15f,
-				temperature_lethal_high: 373.15f,
+				temperature_lethal_high: 393.15f,
 				pressure_sensitive: false,
 				can_tinker: false,
 				baseTraitId: $"{Id}Original",
