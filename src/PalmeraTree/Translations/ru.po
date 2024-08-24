@@ -1,0 +1,65 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. PalmeraTree.STRINGS.CROPS.PALMERABERRY.DESC
+msgctxt "PalmeraTree.STRINGS.CROPS.PALMERABERRY.DESC"
+msgid "A toxic, non-edible bud that emits <link=\"HYDROGEN\">hydrogen</link>."
+msgstr "Ядовитый несъедобный плод, выделяющий <link=\"HYDROGEN\">водород</link>."
+
+#. PalmeraTree.STRINGS.CROPS.PALMERABERRY.NAME
+msgctxt "PalmeraTree.STRINGS.CROPS.PALMERABERRY.NAME"
+msgid "<link=\"PALMERABERRY\">Palmera Berry</link>"
+msgstr "<link=\"PALMERABERRY\">Пальмерика</link>"
+
+#. PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.DESC
+msgctxt "PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.DESC"
+msgid "The steamed bud of a <link=\"PALMERABERRY\">Palmera Berry</link>.\n\nLong exposure to heat and exquisite cooking skills turn the toxic berry into a delicious dessert."
+msgstr "Приготовленная на пару <link=\"PALMERABERRY\">пальмерика</link>.\n\nДолгая термическая обработка и отточенные кулинарные навыки превращают ядовитую ягоду во восхитительный десерт."
+
+#. PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.NAME
+msgctxt "PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.NAME"
+msgid "<link=\"STEAMEDPALMERABERRY\">Steamed Palmera Berry</link>"
+msgstr "<link=\"STEAMEDPALMERABERRY\">Пальмерика на пару</link>"
+
+#. PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC
+msgctxt "PalmeraTree.STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC"
+msgid "Delicious steamed <link=\"PALMERABERRY\">Palmera Berry</link>."
+msgstr "Вкуснейшая <link=\"PALMERABERRY\">пальмерика</link>, приготовленная на пару."
+
+#. PalmeraTree.STRINGS.PLANTS.PALMERATREE.DESC
+msgctxt "PalmeraTree.STRINGS.PLANTS.PALMERATREE.DESC"
+msgid "A large, <link=\"CHLORINEGAS\">chlorine</link>-dwelling <link=\"PLANTS\">Plant</link> that can be grown in farm buildings.\n\nPalmeras grow inedible buds that emit toxic <link=\"HYDROGEN\">hydrogen</link> gas."
+msgstr "Крупное предпочитающее <link=\"CHLORINEGAS\">хлорную</link> среду <link=\"PLANTS\">растение</link>, которое можно выращивать на фермах.\n\nНа пальмерах созревают несъедобные плоды, выделяющие непригодный для дыхания <link=\"HYDROGEN\">водород</link>."
+
+#. PalmeraTree.STRINGS.PLANTS.PALMERATREE.DOMESTICATEDDESC
+msgctxt "PalmeraTree.STRINGS.PLANTS.PALMERATREE.DOMESTICATEDDESC"
+msgid "A large, chlorine-dwelling <link=\"PLANTS\">Plant</link> that grows inedible buds which emit toxic hydrogen gas."
+msgstr "Крупное <link=\"PLANTS\">растение</link>, на котором созревают несъедобные плоды, выделяющие непригодный для дыхания водород."
+
+#. PalmeraTree.STRINGS.PLANTS.PALMERATREE.NAME
+msgctxt "PalmeraTree.STRINGS.PLANTS.PALMERATREE.NAME"
+msgid "<link=\"PALMERATREEPLANT\">Palmera Tree</link>"
+msgstr "<link=\"PALMERATREEPLANT\">Пальмера</link>"
+
+#. PalmeraTree.STRINGS.SEEDS.PALMERATREE.DESC
+msgctxt "PalmeraTree.STRINGS.SEEDS.PALMERATREE.DESC"
+msgid "The <link=\"PLANTS\">Seed</link> of a <link=\"PALMERATREEPLANT\">Palmera Tree</link>."
+msgstr "<link=\"PLANTS\">Семя</link> <link=\"PALMERATREEPLANT\">пальмеры</link>."
+
+#. PalmeraTree.STRINGS.SEEDS.PALMERATREE.NAME
+msgctxt "PalmeraTree.STRINGS.SEEDS.PALMERATREE.NAME"
+msgid "<link=\"PALMERATREEPLANT\">Palmera Tree Seed</link>"
+msgstr "<link=\"PALMERATREEPLANT\">Семя пальмеры</link>"
+
+#. PalmeraTree.STRINGS.SEEDS.PALMERATREE.RECIPEDESC
+msgctxt "PalmeraTree.STRINGS.SEEDS.PALMERATREE.RECIPEDESC"
+msgid "What will happen if you mash some organic mass together?"
+msgstr "Что будет, если замесить немного органического материала?"
+
+#. PalmeraTree.STRINGS.TRANSLATION.AUTHOR.NAME
+msgctxt "PalmeraTree.STRINGS.TRANSLATION.AUTHOR.NAME"
+msgid "Cairath"
+msgstr "RealWiseSerpent"
+
