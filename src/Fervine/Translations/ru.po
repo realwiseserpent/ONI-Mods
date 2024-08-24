@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Application: Oxygen Not Included"
+"POT Version: 2.0"
+
+#. Fervine.STRINGS.PLANTS.FERVINE.DESC
+msgctxt "Fervine.STRINGS.PLANTS.FERVINE.DESC"
+msgid "Fervine uses tiny amounts of heat energy from the atmosphere to keep its light up. It won't use any if the temperature falls under 20 ºC."
+msgstr "Светилоза забирает небольшое количество тепловой энергии из окружающей среды для поддержания свечения. Поглощает тепло при температурах выше 20 ºC."
+
+#. Fervine.STRINGS.PLANTS.FERVINE.DOMESTICATEDDESC
+msgctxt "Fervine.STRINGS.PLANTS.FERVINE.DOMESTICATEDDESC"
+msgid "A temperature reactive, subterranean <link=\"PLANTS\">Plant</link>."
+msgstr "Подземное <link=\"PLANTS\">растение</link>, реагирующее на окружающую температуру."
+
+#. Fervine.STRINGS.PLANTS.FERVINE.NAME
+msgctxt "Fervine.STRINGS.PLANTS.FERVINE.NAME"
+msgid "<link=\"FERVINE\">Fervine</link>"
+msgstr "<link=\"FERVINE\">Светилоза</link>"
+
+#. Fervine.STRINGS.SEEDS.FERVINE.DESC
+msgctxt "Fervine.STRINGS.SEEDS.FERVINE.DESC"
+msgid "The <link=\"PLANTS\">Seed</link> of a <link=\"FERVINE\">Fervine</link>."
+msgstr "<link=\"PLANTS\">Семя</link> <link=\"FERVINE\">светилозы</link>."
+
+#. Fervine.STRINGS.SEEDS.FERVINE.NAME
+msgctxt "Fervine.STRINGS.SEEDS.FERVINE.NAME"
+msgid "<link=\"FERVINE\">Fervine Bulb</link>"
+msgstr "<link=\"FERVINE\">Семя светилозы</link>"
+
+#. Fervine.STRINGS.SEEDS.FERVINE.RECIPE_DESC
+msgctxt "Fervine.STRINGS.SEEDS.FERVINE.RECIPE_DESC"
+msgid "Plant + shiny = ?"
+msgstr "Растение + Блестяшка = ?"
+
+#. Fervine.STRINGS.TRANSLATION.AUTHOR.NAME
+msgctxt "Fervine.STRINGS.TRANSLATION.AUTHOR.NAME"
+msgid "Cairath"
+msgstr "RealWiseSerpent"
+
