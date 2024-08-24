@@ -14,10 +14,10 @@ namespace PalmeraTree
 		{
 			public static void Prefix()
 			{
-				AddPlantStrings(PalmeraTreeConfig.Id, PalmeraTreeConfig.Name, PalmeraTreeConfig.Description, PalmeraTreeConfig.DomesticatedDescription);
-				AddPlantSeedStrings(PalmeraTreeConfig.Id, PalmeraTreeConfig.SeedName, PalmeraTreeConfig.SeedDescription);
-				AddFoodStrings(SteamedPalmeraBerryConfig.Id, SteamedPalmeraBerryConfig.Name, SteamedPalmeraBerryConfig.Description, SteamedPalmeraBerryConfig.RecipeDescription);
-				AddFoodStrings(PalmeraBerryConfig.Id, PalmeraBerryConfig.Name, PalmeraBerryConfig.Description);
+				AddPlantStrings(PalmeraTreeConfig.Id, STRINGS.PLANTS.PALMERATREE.NAME, STRINGS.PLANTS.PALMERATREE.DESC, STRINGS.PLANTS.PALMERATREE.DOMESTICATEDDESC);
+				AddPlantSeedStrings(PalmeraTreeConfig.Id, STRINGS.SEEDS.PALMERATREE.NAME, STRINGS.SEEDS.PALMERATREE.DESC);
+				AddFoodStrings(SteamedPalmeraBerryConfig.Id, STRINGS.FOOD.STEAMEDPALMERABERRY.NAME, STRINGS.FOOD.STEAMEDPALMERABERRY.DESC, STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC);
+				AddFoodStrings(PalmeraBerryConfig.Id, STRINGS.CROPS.PALMERABERRY.NAME, STRINGS.CROPS.PALMERABERRY.DESC);
 				AddCropType(PalmeraBerryConfig.Id, 20, 10);
 			}
 		}
@@ -46,7 +46,7 @@ namespace PalmeraTree
 					output: new[] { new ComplexRecipe.RecipeElement(TagManager.Create(PalmeraTreeConfig.SeedId), 1f) },
 					fabricatorId: SupermaterialRefineryConfig.ID,
 					productionTime: 50f,
-					recipeDescription: "What will happen if you mash some organic mass together?",
+					recipeDescription: STRINGS.SEEDS.PALMERATREE.RECIPEDESC,
 					nameDisplayType: ComplexRecipe.RecipeNameDisplay.Result,
 					sortOrder: 1000
 				);

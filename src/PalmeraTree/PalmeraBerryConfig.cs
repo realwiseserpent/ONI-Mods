@@ -6,16 +6,14 @@ namespace PalmeraTree
 	public class PalmeraBerryConfig : IEntityConfig
 	{
 		public static string Id = "PalmeraBerry";
-		public static string Name = "Palmera Berry";
-		public static string Description = "A toxic, non-edible bud that emits hydrogen.";
 
 		public GameObject CreatePrefab()
 		{
 			var entity = EntityTemplates.CreateLooseEntity(
 				id: Id,
-				name: UI.FormatAsLink(Name, Id),
-				desc: Description,
-				mass: 1f,
+				name: STRINGS.CROPS.PALMERABERRY.NAME,
+				desc: STRINGS.CROPS.PALMERABERRY.DESC,
+                mass: 1f,
 				unitMass: false,
 				anim: Assets.GetAnim("palmeraberry_kanim"),
 				initialAnim: "object",

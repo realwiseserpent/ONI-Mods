@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using STRINGS;
 using TUNING;
 using UnityEngine;
-using CREATURES = STRINGS.CREATURES;
 
 namespace PalmeraTree
 {
@@ -11,13 +10,6 @@ namespace PalmeraTree
         public const string Id = "PalmeraTreePlant";
         public const string SeedId = "PalmeraTreeSeed";
 
-        public static string Name = "Palmera Tree";
-        public static string Description = $"A large, chlorine-dwelling {UI.FormatAsLink("Plant", "PLANTS")} that can be grown in farm buildings.\n\nPalmeras grow inedible buds that emit toxic hydrogen gas.";
-        public static string DomesticatedDescription = $"A large, chlorine-dwelling {UI.FormatAsLink("Plant", "PLANTS")} that grows inedible buds which emit toxic hydrogen gas.";
-
-        public static string SeedName = "Palmera Tree Seed";
-        public static string SeedDescription = $"The {UI.FormatAsLink("Seed", "PLANTS")} of a {UI.FormatAsLink(Name, Id)}.";
-
         private const string AnimName = "custom_palmeratree_kanim";
         private const string AnimNameSeed = "seed_palmeratree_kanim";
 
@@ -25,8 +17,8 @@ namespace PalmeraTree
         {
             var placedEntity = EntityTemplates.CreatePlacedEntity(
                 id: Id,
-                name: Name,
-                desc: Description,
+                name: STRINGS.PLANTS.PALMERATREE.NAME,
+                desc: STRINGS.PLANTS.PALMERATREE.DESC,
                 mass: 1f,
                 anim: Assets.GetAnim(AnimName),
                 initialAnim: "idle_loop",
@@ -45,7 +37,7 @@ namespace PalmeraTree
                 safe_elements: new[] { SimHashes.ChlorineGas },
                 crop_id: PalmeraBerryConfig.Id,
                 baseTraitId: $"{Id}Original",
-                baseTraitName: Name);
+                baseTraitName: STRINGS.PLANTS.PALMERATREE.NAME);
 
             placedEntity.AddOrGet<PalmeraTree>();
 
@@ -60,13 +52,13 @@ namespace PalmeraTree
             var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
                 plant: placedEntity,
                 id: SeedId,
-                name: UI.FormatAsLink(SeedName, Id),
-                desc: SeedDescription,
+                name: STRINGS.SEEDS.PALMERATREE.NAME,
+                desc: STRINGS.SEEDS.PALMERATREE.DESC,
                 productionType: SeedProducer.ProductionType.Harvest,
                 anim: Assets.GetAnim(AnimNameSeed),
                 additionalTags: new List<Tag> { GameTags.CropSeed },
                 sortOrder: 7,
-                domesticatedDescription: CREATURES.SPECIES.JUNGLEGASPLANT.DOMESTICATEDDESC,
+                domesticatedDescription: STRINGS.PLANTS.PALMERATREE.DOMESTICATEDDESC,
                 width: 0.33f,
                 height: 0.33f);
 
