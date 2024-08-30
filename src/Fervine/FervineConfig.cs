@@ -35,16 +35,16 @@ namespace Fervine
                 decor: DECOR.BONUS.TIER3,
                 defaultTemperature: 350f);
 
-            EntityTemplates.ExtendEntityToBasicPlant(
-                template: plantEntityTemplate,
-                temperature_lethal_low: 258.15f,
-                temperature_warning_low: 288.15f,
-                temperature_warning_high: 363.15f,
-                temperature_lethal_high: 373.15f,
-                pressure_sensitive: false,
-                can_tinker: false,
-                baseTraitId: $"{Id}Original",
-                baseTraitName: Name);
+			EntityTemplates.ExtendEntityToBasicPlant(
+				template: plantEntityTemplate,
+				temperature_lethal_low: 258.15f,
+				temperature_warning_low: 288.15f,
+				temperature_warning_high: 363.15f,
+				temperature_lethal_high: 393.15f,
+				pressure_sensitive: false,
+				can_tinker: false,
+				baseTraitId: $"{Id}Original",
+				baseTraitName: Name);
 
             var light2D = plantEntityTemplate.AddOrGet<Light2D>();
             light2D.Color = new Color(1f, 1f, 0f);

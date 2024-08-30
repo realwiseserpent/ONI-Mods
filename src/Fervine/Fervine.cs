@@ -35,7 +35,10 @@ namespace Fervine
 		[Serialize]
 		private float _kjConsumed;
 
-		protected override void OnSpawn()
+        [MyCmpReq]
+        private WiltCondition wiltCondition;
+
+        protected override void OnSpawn()
 		{
 			base.OnSpawn();
 			smi.Get<KBatchedAnimController>().randomiseLoopedOffset = true;
@@ -106,21 +109,24 @@ namespace Fervine
 					.InitializeStates(masterTarget, Dead)
 					.DefaultState(Alive.Closed);
 
-				Alive.Closed
-					.PlayAnim("close")
-					.Update("closed", (smi, dt) =>
-					{
-						AbsorbHeat(smi, dt);
+                Alive.Closed
+                    .PlayAnim("close")
+                    .Update("closed", (smi, dt) =>
+                    {
+                        if (!smi.master.wiltCondition.IsWilting())
+                        {
+                            AbsorbHeat(smi, dt);
 
-						if (smi.master._kjConsumed > smi.master._openEnergyThreshold)
-						{
-							smi.GoTo(Alive.Open);
-						}
+                            if (smi.master._kjConsumed > smi.master._openEnergyThreshold)
+                            {
+                                smi.GoTo(Alive.Open);
+                            }
+                        }
+                    }, UpdateRate.SIM_1000ms);
 
-					}, UpdateRate.SIM_1000ms);
-
-				Alive.Open
-					.PlayAnim("open", KAnim.PlayMode.Once)
+                Alive.Open
+                    .EventTransition(GameHashes.Wilt, this.Alive.Closed, smi => smi.master.wiltCondition.IsWilting())
+                    .PlayAnim("open", KAnim.PlayMode.Once)
 					.Enter(smi => smi.master.lightSource.enabled = true)
 					.Update("open", (smi, dt) =>
 					{
