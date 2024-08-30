@@ -31,9 +31,9 @@ namespace PalmeraTree
 
 			var foodInfo = new EdiblesManager.FoodInfo(
 				id: Id,
-				dlcId: DlcManager.VANILLA_ID,
+				dlcId: "",
 				caloriesPerUnit: 2000000f,
-				quality: 6,
+				quality: 4,
 				preserveTemperatue: 255.15f,
 				rotTemperature: 277.15f,
 				spoilTime: TUNING.FOOD.SPOIL_TIME.SLOW,
@@ -41,8 +41,11 @@ namespace PalmeraTree
 
 			var food = EntityTemplates.ExtendEntityToFood(entity, foodInfo);
 
-			Recipe = AddComplexRecipe(
-				input: new[] {new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 1f)},
+            Recipe = AddComplexRecipe(
+				input: new[] {
+					new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 1f),
+					new ComplexRecipe.RecipeElement(SwampLilyFlowerConfig.ID, 1f),
+                },
 				output: new[] {new ComplexRecipe.RecipeElement(SteamedPalmeraBerryConfig.Id, 1f)},
 				fabricatorId: GourmetCookingStationConfig.ID,
 				productionTime: 100f,
