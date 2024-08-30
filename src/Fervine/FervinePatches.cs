@@ -13,8 +13,8 @@ namespace Fervine
 		{
 			public static void Prefix()
 			{
-				AddPlantStrings(FervineConfig.Id, FervineConfig.Name, FervineConfig.Description, FervineConfig.DomesticatedDescription);
-				AddPlantSeedStrings(FervineConfig.Id, FervineConfig.SeedName, FervineConfig.SeedDesc);
+				AddPlantStrings(FervineConfig.Id, STRINGS.PLANTS.FERVINE.NAME, STRINGS.PLANTS.FERVINE.DESC, STRINGS.PLANTS.FERVINE.DOMESTICATEDDESC);
+				AddPlantSeedStrings(FervineConfig.Id, STRINGS.SEEDS.FERVINE.NAME, STRINGS.SEEDS.FERVINE.DESC);
 			}
 		}
 
@@ -46,7 +46,7 @@ namespace Fervine
 					},
 					fabricatorId: SupermaterialRefineryConfig.ID,
 					productionTime: 50f,
-					recipeDescription: "Plant + shiny = ?",
+					recipeDescription: STRINGS.SEEDS.FERVINE.RECIPE_DESC,
 					nameDisplayType: ComplexRecipe.RecipeNameDisplay.Result,
 					sortOrder: 1000
 				);

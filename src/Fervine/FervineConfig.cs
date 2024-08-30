@@ -5,35 +5,28 @@ using UnityEngine;
 
 namespace Fervine
 {
-    public class FervineConfig : IEntityConfig
-    {
-        public const string Id = "Fervine";
-        public const string Name = "Fervine";
-        public static string Description = $"A temperature reactive, subterranean {UI.FormatAsLink("Plant", "PLANTS")}.";
-        public static string DomesticatedDescription = $"Fervine uses tiny amounts of heat energy from the atmosphere to keep its light up. " +
-                                                       $"It won't use any if the temperature falls under {GameUtil.GetFormattedTemperature(293.15f)}.";
-
-        public const string SeedId = "FervineBulb";
-        public const string SeedName = "Fervine Bulb";
-        public static string SeedDesc = $"The {UI.FormatAsLink("Seed", "PLANTS")} of a {UI.FormatAsLink(Name, Id)}.";
+	public class FervineConfig : IEntityConfig
+	{
+		public const string Id = "Fervine";
+		public const string SeedId = "FervineBulb";
 
         private const string AnimName = "fervine_kanim";
         private const string AnimNameSeed = "seed_fervine_kanim";
 
-        public GameObject CreatePrefab()
-        {
-            var plantEntityTemplate = EntityTemplates.CreatePlacedEntity(
-                id: Id,
-                name: UI.FormatAsLink(Name, Id),
-                desc: Description,
-                width: 1,
-                height: 1,
-                mass: 1f,
-                anim: Assets.GetAnim(AnimName),
-                initialAnim: "close",
-                sceneLayer: Grid.SceneLayer.BuildingFront,
-                decor: DECOR.BONUS.TIER3,
-                defaultTemperature: 350f);
+		public GameObject CreatePrefab()
+		{
+			var plantEntityTemplate = EntityTemplates.CreatePlacedEntity(
+				id: Id,
+				name: STRINGS.PLANTS.FERVINE.NAME,
+				desc: STRINGS.PLANTS.FERVINE.DESC,
+				width: 1,
+				height: 1,
+				mass: 1f,
+				anim: Assets.GetAnim(AnimName),
+				initialAnim: "close",
+				sceneLayer: Grid.SceneLayer.BuildingFront,
+				decor: DECOR.BONUS.TIER3,
+				defaultTemperature: 350f);
 
 			EntityTemplates.ExtendEntityToBasicPlant(
 				template: plantEntityTemplate,
@@ -44,7 +37,7 @@ namespace Fervine
 				pressure_sensitive: false,
 				can_tinker: false,
 				baseTraitId: $"{Id}Original",
-				baseTraitName: Name);
+				baseTraitName: STRINGS.PLANTS.FERVINE.NAME);
 
             var light2D = plantEntityTemplate.AddOrGet<Light2D>();
             light2D.Color = new Color(1f, 1f, 0f);
@@ -53,17 +46,18 @@ namespace Fervine
 
             plantEntityTemplate.AddOrGet<Fervine>();
 
-            var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
-                plant: plantEntityTemplate,
-                id: SeedId,
-                name: UI.FormatAsLink(SeedName, Id),
-                desc: SeedDesc,
-                productionType: SeedProducer.ProductionType.Hidden,
-                anim: Assets.GetAnim(AnimNameSeed),
-                additionalTags: new List<Tag> { GameTags.DecorSeed },
-                sortOrder: 6,
-                width: 0.33f,
-                height: 0.33f);
+			var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
+				plant: plantEntityTemplate,
+				id: SeedId,
+				name: STRINGS.SEEDS.FERVINE.NAME,
+				desc: STRINGS.SEEDS.FERVINE.DESC,
+				productionType: SeedProducer.ProductionType.Hidden,
+				anim: Assets.GetAnim(AnimNameSeed),
+				additionalTags: new List<Tag> { GameTags.DecorSeed },
+				sortOrder: 6,
+				width: 0.33f,
+				height: 0.33f,
+				domesticatedDescription: STRINGS.PLANTS.FERVINE.DOMESTICATEDDESC);
 
             EntityTemplates.CreateAndRegisterPreviewForPlant(
                 seed: seed,
