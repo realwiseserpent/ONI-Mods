@@ -1,4 +1,5 @@
 ﻿using STRINGS;
+using System.Collections.Generic;
 using UnityEngine;
 using static CaiLib.Utils.RecipeUtils;
 
@@ -39,12 +40,17 @@ namespace PalmeraTree
 				spoilTime: TUNING.FOOD.SPOIL_TIME.SLOW,
 				can_rot: true);
 
-			var food = EntityTemplates.ExtendEntityToFood(entity, foodInfo);
+            var food = EntityTemplates.ExtendEntityToFood(entity, foodInfo);
 
-			Recipe = AddComplexRecipe(
-				input: new[] {new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 1f)},
-				output: new[] {new ComplexRecipe.RecipeElement(SteamedPalmeraBerryConfig.Id, 1f)},
-				fabricatorId: GourmetCookingStationConfig.ID,
+            foodInfo.AddEffects(new List<string>
+            {
+                "GoodEats"
+            }, DlcManager.AVAILABLE_ALL_VERSIONS);
+
+            Recipe = AddComplexRecipe(
+                input: new[] { new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 1f) },
+                output: new[] { new ComplexRecipe.RecipeElement(SteamedPalmeraBerryConfig.Id, 1f) },
+                fabricatorId: GourmetCookingStationConfig.ID,
 				productionTime: 100f,
 				recipeDescription: RecipeDescription,
 				nameDisplayType: ComplexRecipe.RecipeNameDisplay.Result,
