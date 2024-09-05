@@ -18,7 +18,7 @@ namespace PalmeraTree
 				AddPlantSeedStrings(PalmeraTreeConfig.Id, STRINGS.SEEDS.PALMERATREE.NAME, STRINGS.SEEDS.PALMERATREE.DESC);
 				AddFoodStrings(SteamedPalmeraBerryConfig.Id, STRINGS.FOOD.STEAMEDPALMERABERRY.NAME, STRINGS.FOOD.STEAMEDPALMERABERRY.DESC, STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC);
 				AddFoodStrings(PalmeraBerryConfig.Id, STRINGS.CROPS.PALMERABERRY.NAME, STRINGS.CROPS.PALMERABERRY.DESC);
-				AddCropType(PalmeraBerryConfig.Id, 20, 10);
+				AddCropType(PalmeraBerryConfig.Id, 20, 5);
 			}
 		}
 

@@ -33,7 +33,7 @@ namespace PalmeraTree
                 temperature_lethal_low: 258.15f,
                 temperature_warning_low: 323.15f,
                 temperature_warning_high: 363.15f,
-                temperature_lethal_high: 373.15f,
+                temperature_lethal_high: 398.15f,
                 safe_elements: new[] { SimHashes.ChlorineGas },
                 crop_id: PalmeraBerryConfig.Id,
                 baseTraitId: $"{Id}Original",
@@ -71,6 +71,26 @@ namespace PalmeraTree
                 height: 3);
 
             SoundEventVolumeCache.instance.AddVolume("bristleblossom_kanim", "PrickleFlower_harvest", NOISE_POLLUTION.CREATURES.TIER1);
+
+            //===> SOLID FERTILIZER THIS CROP REQUIRES <============================================================================
+            EntityTemplates.ExtendPlantToFertilizable(placedEntity, new PlantElementAbsorber.ConsumeInfo[]
+            {
+                new PlantElementAbsorber.ConsumeInfo
+                {
+                    tag = SimHashes.Phosphorite.CreateTag(),
+                    massConsumptionRate = 25/600f
+                }
+            });
+
+            ////===> LIQUID IRRIGATION THIS CROP REQUIRES <===========================================================================
+            //EntityTemplates.ExtendPlantToIrrigated(placedEntity, new PlantElementAbsorber.ConsumeInfo[]
+            //{ 
+            //    new PlantElementAbsorber.ConsumeInfo
+            //    {
+            //        tag = SimHashes.LiquidPhosphorus.CreateTag(),
+            //        massConsumptionRate = 3/600f
+            //    }
+            //});
 
             return placedEntity;
         }
