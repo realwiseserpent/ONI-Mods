@@ -28,7 +28,6 @@ namespace PalmeraTree
 
 			var foodInfo = new EdiblesManager.FoodInfo(
 				id: Id,
-				dlcId: "",
 				caloriesPerUnit: 2000000f,
 				quality: 4,
 				preserveTemperatue: 255.15f,
@@ -64,7 +63,7 @@ namespace PalmeraTree
 
 		public string[] GetDlcIds()
 		{
-			return DlcManager.AVAILABLE_ALL_VERSIONS;
+			return null;
 		}
 	}
 }

@@ -43,7 +43,7 @@ namespace PalmeraTree
 
             var consumer = placedEntity.AddOrGet<ElementConsumer>();
             consumer.elementToConsume = SimHashes.ChlorineGas;
-            consumer.consumptionRate = 0.001f;
+            consumer.consumptionRate = 1/600f;
 
             var emitter = placedEntity.AddOrGet<ElementEmitter>();
             emitter.outputElement = new ElementConverter.OutputElement(0.001f, SimHashes.Hydrogen, 0f, true, false, 0f, 2f);
@@ -51,6 +51,7 @@ namespace PalmeraTree
 
             var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
                 plant: placedEntity,
+                dlcRestrictions: this as IHasDlcRestrictions,
                 id: SeedId,
                 name: STRINGS.SEEDS.PALMERATREE.NAME,
                 desc: STRINGS.SEEDS.PALMERATREE.DESC,
@@ -78,7 +79,7 @@ namespace PalmeraTree
                 new PlantElementAbsorber.ConsumeInfo
                 {
                     tag = SimHashes.Phosphorite.CreateTag(),
-                    massConsumptionRate = 25/600f
+                    massConsumptionRate = 20/600f
                 }
             });
 
@@ -105,7 +106,7 @@ namespace PalmeraTree
 
         public string[] GetDlcIds()
         {
-            return DlcManager.AVAILABLE_ALL_VERSIONS;
+            return null;
         }
     }
 }
