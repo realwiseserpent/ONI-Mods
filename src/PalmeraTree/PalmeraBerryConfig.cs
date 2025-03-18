@@ -25,7 +25,6 @@ namespace PalmeraTree
 
 			var foodInfo = new EdiblesManager.FoodInfo(
 				id: Id,
-				dlcId: DlcManager.VANILLA_ID,
 				caloriesPerUnit: 0.0f,
 				quality: TUNING.FOOD.FOOD_QUALITY_AWFUL,
 				preserveTemperatue: 255.15f,
@@ -57,7 +56,7 @@ namespace PalmeraTree
 
 		public string[] GetDlcIds()
 		{
-			return DlcManager.AVAILABLE_ALL_VERSIONS;
+			return null;
 		}
 	}
 }

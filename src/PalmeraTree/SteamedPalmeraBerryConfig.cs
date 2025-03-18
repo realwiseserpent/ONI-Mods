@@ -29,7 +29,6 @@ namespace PalmeraTree
 
 			var foodInfo = new EdiblesManager.FoodInfo(
 				id: Id,
-				dlcId: DlcManager.VANILLA_ID,
 				caloriesPerUnit: 2000000f,
 				quality: 6,
 				preserveTemperatue: 255.15f,
@@ -42,7 +41,7 @@ namespace PalmeraTree
             foodInfo.AddEffects(new List<string>
             {
                 "GoodEats"
-            }, DlcManager.AVAILABLE_ALL_VERSIONS);
+            });
 
             Recipe = AddComplexRecipe(
                 input: new[] { new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 1f) },
@@ -67,7 +66,7 @@ namespace PalmeraTree
 
 		public string[] GetDlcIds()
 		{
-			return DlcManager.AVAILABLE_ALL_VERSIONS;
+			return null;
 		}
 	}
 }

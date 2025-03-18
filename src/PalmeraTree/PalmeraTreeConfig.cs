@@ -51,6 +51,7 @@ namespace PalmeraTree
 
             var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
                 plant: placedEntity,
+                dlcRestrictions: this as IHasDlcRestrictions,
                 id: SeedId,
                 name: STRINGS.SEEDS.PALMERATREE.NAME,
                 desc: STRINGS.SEEDS.PALMERATREE.DESC,
@@ -85,7 +86,7 @@ namespace PalmeraTree
 
         public string[] GetDlcIds()
         {
-            return DlcManager.AVAILABLE_ALL_VERSIONS;
+            return null;
         }
     }
 }
