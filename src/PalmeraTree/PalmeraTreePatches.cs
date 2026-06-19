@@ -29,6 +29,7 @@ namespace PalmeraTree
 			public static void Postfix(ref Immigration __instance)
 			{
 				AddCarePackage(ref __instance, PalmeraTreeConfig.SeedId, 1f, () => CycleCondition(48));
+                AddCarePackage(ref __instance, SteamedPalmeraBerryConfig.Id, 2f, () => DiscoveredResources.Instance.IsDiscovered(PalmeraTreeConfig.SeedId));
 			}
 		}
 
