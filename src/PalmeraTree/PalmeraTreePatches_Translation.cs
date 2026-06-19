@@ -28,7 +28,7 @@ namespace PalmeraTree
                 LoadStrings();
 
                 // Register strings without namespace
-                // because we already loaded user transltions, custom languages will overwrite these
+                // because we already loaded user translations, custom languages will overwrite these
                 LocString.CreateLocStringKeys(root, null);
 
                 // Creates template for users to edit

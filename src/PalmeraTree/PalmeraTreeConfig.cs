@@ -39,13 +39,14 @@ namespace PalmeraTree
                 safe_elements: new[] { SimHashes.ChlorineGas },
                 crop_id: PalmeraBerryConfig.Id,
                 baseTraitId: $"{Id}Original",
-                baseTraitName: STRINGS.PLANTS.PALMERATREE.NAME);
+                baseTraitName: STRINGS.PLANTS.PALMERATREE.NAME,
+                max_radiation: TUNING.PLANTS.RADIATION_THRESHOLDS.TIER_5);
 
             placedEntity.AddOrGet<PalmeraTree>();
 
             var consumer = placedEntity.AddOrGet<ElementConsumer>();
             consumer.elementToConsume = SimHashes.ChlorineGas;
-            consumer.consumptionRate = 1/600f;
+            consumer.consumptionRate = 6/600f;
 
             var emitter = placedEntity.AddOrGet<ElementEmitter>();
             emitter.outputElement = new ElementConverter.OutputElement(0.001f, SimHashes.Hydrogen, 0f, true, false, 0f, 2f);
@@ -83,7 +84,7 @@ namespace PalmeraTree
                 new PlantElementAbsorber.ConsumeInfo
                 {
                     tag = SimHashes.Phosphorite.CreateTag(),
-                    massConsumptionRate = 20/600f
+                    massConsumptionRate = 10/600f
                 }
             });
 

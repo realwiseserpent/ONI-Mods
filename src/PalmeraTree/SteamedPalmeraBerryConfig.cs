@@ -32,19 +32,19 @@ namespace PalmeraTree
 				quality: 4,
 				preserveTemperatue: 255.15f,
 				rotTemperature: 277.15f,
-				spoilTime: TUNING.FOOD.SPOIL_TIME.SLOW,
+				spoilTime: TUNING.FOOD.SPOIL_TIME.DEFAULT,
 				can_rot: true);
 
 			var food = EntityTemplates.ExtendEntityToFood(entity, foodInfo);
 
             Recipe = AddComplexRecipe(
 				input: new[] {
-					new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 1f),
-					new ComplexRecipe.RecipeElement(SwampLilyFlowerConfig.ID, 1f),
+					new ComplexRecipe.RecipeElement(PalmeraBerryConfig.Id, 2f),
+					new ComplexRecipe.RecipeElement(SwampLilyFlowerConfig.ID, 2f),
                 },
-				output: new[] {new ComplexRecipe.RecipeElement(SteamedPalmeraBerryConfig.Id, 1f)},
+				output: new[] {new ComplexRecipe.RecipeElement(SteamedPalmeraBerryConfig.Id, 2f)},
 				fabricatorId: GourmetCookingStationConfig.ID,
-				productionTime: 100f,
+				productionTime: TUNING.FOOD.RECIPES.STANDARD_COOK_TIME,
 				recipeDescription: STRINGS.FOOD.STEAMEDPALMERABERRY.RECIPEDESC,
 				nameDisplayType: ComplexRecipe.RecipeNameDisplay.Result,
 				sortOrder: 120
