@@ -3,11 +3,11 @@
   <PropertyGroup>
     <ProjectGuid>{E0E13C69-5124-446D-AE9A-81C844C49830}</ProjectGuid>
     <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <RootNamespace>PalmeraTree</RootNamespace>
     <AssemblyName>PalmeraTree</AssemblyName>
-    <AssemblyVersion>2022.10.10.0</AssemblyVersion>
-    <FileVersion>2022.10.10.0</FileVersion>
+    <AssemblyVersion>2026.06.19.0</AssemblyVersion>
+    <FileVersion>2026.06.19.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ModName>Palmera Tree</ModName>
