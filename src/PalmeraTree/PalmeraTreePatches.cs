@@ -1,4 +1,6 @@
 using HarmonyLib;
+using System.Collections.Generic;
+using UnityEngine;
 using static CaiLib.Utils.CarePackagesUtils;
 using static CaiLib.Utils.PlantUtils;
 using static CaiLib.Utils.RecipeUtils;
@@ -30,7 +32,7 @@ namespace PalmeraTree
 			{
 				AddCarePackage(ref __instance, PalmeraTreeConfig.SeedId, 1f, () => CycleCondition(48));
                 AddCarePackage(ref __instance, SteamedPalmeraBerryConfig.Id, 2f, () => DiscoveredResources.Instance.IsDiscovered(PalmeraTreeConfig.SeedId));
-			}
+            }
 		}
 
 		[HarmonyPatch(typeof(SupermaterialRefineryConfig))]
@@ -54,19 +56,85 @@ namespace PalmeraTree
 			}
 		}
 
-		// seems not needed anymore?
-		//      [HarmonyPatch(typeof(KSerialization.Manager))]
-		//      [HarmonyPatch("GetType")]
-		//      [HarmonyPatch(new[] { typeof(string) })]
-		//      public static class KSerializationManager_GetType_Patch
-		//      {
-		//          public static void Postfix(string type_name, ref Type __result)
-		//          {
-		//              if (type_name == "PalmeraTree.PalmeraTree")
-		//              {
-		//                  __result = typeof(PalmeraTree);
-		//              }
-		//          }
-		//      }
-	}
+        [HarmonyPatch(typeof(CodexCache), "CollectEntries")]
+        public class CodexCache_CollectEntries_Patch
+        {
+            public static void Postfix(string folder, List<CodexEntry> __result)
+            {
+                if (folder != string.Empty)
+                    return;
+
+                string speciesNameTemplate = "STRINGS.CREATURES.SPECIES.{0}.NAME";
+                string speciesDescTemplate = "STRINGS.CREATURES.SPECIES.{0}.DESC";
+
+                CodexEntry temp;
+
+                if ((temp = CreateCodex(PalmeraTreeConfig.Id, speciesNameTemplate, $"STRINGS.CODEX.MEALWOOD.SUBTITLE",
+                    speciesDescTemplate, "PLANTS", true)) != null)
+                    __result.Add(temp);
+            }
+        }
+
+        private static CodexEntry CreateCodex(string id, string title, string subtitle, string body,
+            string category, bool cutVersion = false)
+        {
+            GameObject go = Assets.GetPrefab(id);
+
+            if (go == null)
+                return null;
+
+            List<ContentContainer> containers = new List<ContentContainer>
+            {
+                new ContentContainer(new List<ICodexWidget>()
+                    {
+                        new CodexText() { stringKey = string.Format(title, id.ToUpperInvariant()), style = CodexTextStyle.Title },
+                        new CodexText() { stringKey = string.Format(subtitle, id.ToUpperInvariant()), style = CodexTextStyle.Subtitle },
+                        new CodexDividerLine()
+                    }, ContentContainer.ContentLayout.Vertical)
+            };
+
+            Sprite first = Def.GetUISprite(go).first;
+
+            if (!cutVersion)
+                CodexEntryGenerator.GenerateImageContainers(first, containers);
+
+            List<ICodexWidget> content = new List<ICodexWidget>
+            {
+                new CodexText()
+                {
+                    stringKey = string.Format(body, id.ToUpperInvariant()),
+                    style = CodexTextStyle.Body
+                }
+            };
+            ContentContainer contentContainer = new ContentContainer(content, ContentContainer.ContentLayout.Vertical);
+            containers.Add(contentContainer);
+
+            CodexEntry entry = new CodexEntry(category, containers, go.GetProperName());
+
+            entry.icon = first;
+
+            entry.id = id;
+            entry.disabled = false;
+
+            if (!cutVersion)
+                entry.contentMadeAndUsed.Add(new CodexEntry_MadeAndUsed() { tag = id });
+
+            return entry;
+        }
+
+        // seems not needed anymore?
+        //      [HarmonyPatch(typeof(KSerialization.Manager))]
+        //      [HarmonyPatch("GetType")]
+        //      [HarmonyPatch(new[] { typeof(string) })]
+        //      public static class KSerializationManager_GetType_Patch
+        //      {
+        //          public static void Postfix(string type_name, ref Type __result)
+        //          {
+        //              if (type_name == "PalmeraTree.PalmeraTree")
+        //              {
+        //                  __result = typeof(PalmeraTree);
+        //              }
+        //          }
+        //      }
+    }
 }
