@@ -1,4 +1,6 @@
 ﻿using HarmonyLib;
+using System.Collections.Generic;
+using UnityEngine;
 using static CaiLib.Utils.CarePackagesUtils;
 using static CaiLib.Utils.RecipeUtils;
 using static CaiLib.Utils.StringUtils;
@@ -52,5 +54,71 @@ namespace Fervine
 				);
 			}
 		}
-	}
+
+        [HarmonyPatch(typeof(CodexCache), "CollectEntries")]
+        public class CodexCache_CollectEntries_Patch
+        {
+            public static void Postfix(string folder, List<CodexEntry> __result)
+            {
+                if (folder != string.Empty)
+                    return;
+
+                string speciesNameTemplate = "STRINGS.CREATURES.SPECIES.{0}.NAME";
+                string speciesDescTemplate = "STRINGS.CREATURES.SPECIES.{0}.DESC";
+
+                CodexEntry temp;
+
+                if ((temp = CreateCodex(FervineConfig.Id, speciesNameTemplate, $"STRINGS.CODEX.BLISSBURST.SUBTITLE",
+                    speciesDescTemplate, "PLANTS", true)) != null)
+                    __result.Add(temp);
+            }
+        }
+
+        private static CodexEntry CreateCodex(string id, string title, string subtitle, string body,
+            string category, bool cutVersion = false)
+        {
+            GameObject go = Assets.GetPrefab(id);
+
+            if (go == null)
+                return null;
+
+            List<ContentContainer> containers = new List<ContentContainer>
+            {
+                new ContentContainer(new List<ICodexWidget>()
+                    {
+                        new CodexText() { stringKey = string.Format(title, id.ToUpperInvariant()), style = CodexTextStyle.Title },
+                        new CodexText() { stringKey = string.Format(subtitle, id.ToUpperInvariant()), style = CodexTextStyle.Subtitle },
+                        new CodexDividerLine()
+                    }, ContentContainer.ContentLayout.Vertical)
+            };
+
+            Sprite first = Def.GetUISprite(go).first;
+
+            if (!cutVersion)
+                CodexEntryGenerator.GenerateImageContainers(first, containers);
+
+            List<ICodexWidget> content = new List<ICodexWidget>
+            {
+                new CodexText()
+                {
+                    stringKey = string.Format(body, id.ToUpperInvariant()),
+                    style = CodexTextStyle.Body
+                }
+            };
+            ContentContainer contentContainer = new ContentContainer(content, ContentContainer.ContentLayout.Vertical);
+            containers.Add(contentContainer);
+
+            CodexEntry entry = new CodexEntry(category, containers, go.GetProperName());
+
+            entry.icon = first;
+
+            entry.id = id;
+            entry.disabled = false;
+
+            if (!cutVersion)
+                entry.contentMadeAndUsed.Add(new CodexEntry_MadeAndUsed() { tag = id });
+
+            return entry;
+        }
+    }
 }
