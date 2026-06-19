@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <OutputType>Library</OutputType>
     <LangVersion>8.0</LangVersion>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
@@ -11,7 +11,7 @@
 
   <PropertyGroup>
     <SupportedContent>ALL</SupportedContent>
-    <MinimumSupportedBuild>525812</MinimumSupportedBuild>
+    <MinimumSupportedBuild>736649</MinimumSupportedBuild>
     <APIVersion>2</APIVersion>
   </PropertyGroup>
 
