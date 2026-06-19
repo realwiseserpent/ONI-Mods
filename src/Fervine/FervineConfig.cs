@@ -48,6 +48,7 @@ namespace Fervine
 
 			var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
 				plant: plantEntityTemplate,
+				dlcRestrictions: this as IHasDlcRestrictions,
 				id: SeedId,
 				name: STRINGS.SEEDS.FERVINE.NAME,
 				desc: STRINGS.SEEDS.FERVINE.DESC,
@@ -80,9 +81,9 @@ namespace Fervine
         {
         }
 
-        public string[] GetDlcIds()
-        {
-            return DlcManager.AVAILABLE_ALL_VERSIONS;
-        }
-    }
+		public string[] GetDlcIds()
+		{
+			return null;
+		}
+	}
 }

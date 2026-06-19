@@ -3,11 +3,11 @@
   <PropertyGroup>
     <ProjectGuid>{CABB3EF6-E62F-4932-9544-6B852143230A}</ProjectGuid>
     <Configurations>VanillaDebug;VanillaRelease;SpacedOutDebug;SpacedOutRelease</Configurations>
-    <TargetFramework>net471</TargetFramework>
+    <TargetFramework>net48</TargetFramework>
     <RootNamespace>Fervine</RootNamespace>
     <AssemblyName>Fervine</AssemblyName>
-    <AssemblyVersion>2022.10.7.0</AssemblyVersion>
-    <FileVersion>2022.10.7.0</FileVersion>
+    <AssemblyVersion>2026.06.19.0</AssemblyVersion>
+    <FileVersion>2026.06.19.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup>
     <ModName>Fervine</ModName>
