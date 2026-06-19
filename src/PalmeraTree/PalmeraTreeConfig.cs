@@ -13,6 +13,8 @@ namespace PalmeraTree
         private const string AnimName = "custom_palmeratree_kanim";
         private const string AnimNameSeed = "seed_palmeratree_kanim";
 
+        public const float PlantFiberProduction = 4f;          // PlantFiber per cycle
+
         public GameObject CreatePrefab()
         {
             var placedEntity = EntityTemplates.CreatePlacedEntity(
@@ -48,6 +50,8 @@ namespace PalmeraTree
             var emitter = placedEntity.AddOrGet<ElementEmitter>();
             emitter.outputElement = new ElementConverter.OutputElement(0.001f, SimHashes.Hydrogen, 0f, true, false, 0f, 2f);
             emitter.maxPressure = 1.8f;
+
+            placedEntity.AddOrGet<PlantFiberProducer>().amount = PlantFiberProduction * 20;
 
             var seed = EntityTemplates.CreateAndRegisterSeedForPlant(
                 plant: placedEntity,
